@@ -1,0 +1,25 @@
+@mixin d-flex ($disp:flex, $jus:space-between, $align:center) {
+    display: $disp;
+    justify-content: $jus;
+    align-items: $align;
+}
+@mixin bgimage ($size:cover,$rep:no-repeat,$pos:center) {
+    
+    background-size: $size;
+    background-repeat: $rep;
+    background-position: $pos;
+}
+@mixin pos($top, $left, $transf) {
+    top: $top;
+    left: $left;
+    transform: $transf;
+}
+@mixin font ($fam, $size, $color) {
+    font-family: $fam;
+    font-size: $size;
+    color: $color;
+}
+@mixin widsize ($max,$width) {
+    max-width: $max;
+    width: $width;
+}

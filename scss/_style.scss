@@ -1,0 +1,110 @@
+header {
+    background-color: $colorhov;
+    padding: 0 15px;
+    .menu{
+        // background-color: $colorhov;
+        width:$sizew;
+        @include d-flex;
+        .fa-bars {
+            @media (max-width:920px) {
+                display: block;
+                color: $colorwh;
+                font-size: 30px;
+            }
+            display: none;
+        }
+        .menuul{
+            @media (max-width:920px) {
+                display: none;
+            }
+            width: 450px;
+            @include d-flex;
+            li{
+                a{
+                    @include font ($fonthel,25px,$colorwh);
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+.bg-image {
+    @media (max-width:1162px){
+        padding: 0 15px;
+    }
+    @media (max-width:750px) {
+        height: auto;
+    }
+    width: $sizew;
+    height: 1000px;
+    background-image: url('../image/bg2.png');
+    @include bgimage (cover,no-repeat,center);   
+    .container{
+        @extend %container;
+        padding-top: 100px;
+        &-text {
+            @include widsize (770px,100%);
+            margin: 0 auto;
+            text-align: center;
+            h2 {
+                @include font ($fonthel,47px,$colorwh);
+            }
+            p {
+                @include font ($fonthel,20px,$colorwh);
+                line-height: 30px;
+                margin-top: 20px;
+                .cons {
+                    color: rgb(255, 255, 255, 0.5);
+                }
+            }
+        }
+        &-blocks{
+            @media (max-width:750px) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            margin-top: 100px;
+            @extend %container;
+            @include d-flex (flex,space-between,center);
+            div{
+                @media (max-width:770px) {
+                    &:nth-child(2) {
+                        margin: 0 20px;
+                        @media (max-width:546px) {
+                            margin-top: 20px;
+                        }
+                    }
+                }
+                @media (max-width:750px) {
+                    &:nth-child(3) {
+                        margin-top: 20px;
+                    }
+                }
+                max-width: 230px;
+                width: 100%;
+                height: 440px;
+                background-color: #c45158;
+                @include d-flex (flex,center,center);
+                flex-direction: column;
+                text-align: center;
+                &:hover {
+                    background-color: $colorhov;
+                }
+                h3 {
+                    margin: 45px 0;
+                    @include font ($fonthel,25px,$colorwh);
+                }
+                p {
+                    @include font ($fonthel,16px,$colorwh);
+                    line-height: 20px;
+                }
+                img{
+                    height: 90px;
+                }
+            }
+        }
+    }
+}
